@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Lore | AI-Optimized Answer Objects for Your Business</title>
+    <meta name="description" content="New Lore builds AI-optimized answer objects that become the source ChatGPT, Perplexity, Gemini, and Claude pull from when answering questions about your business.">
+    <meta property="og:title" content="New Lore | AI-Optimized Answer Objects for Your Business">
+    <meta property="og:description" content="Make your business the expert source of answers for every relevant question in your market. New Lore builds and maintains answer objects for AI discovery.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/svg+xml" href="media/NL-Icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.css">
+</head>
+<body>
+
+
+    <header class="nav">
+        <div class="container">
+            <a href="#top" class="nav-logo">
+                <img src="media/NL-Full-Logo.svg" alt="New Lore">
+            </a>
+            <nav class="nav-links">
+                <a href="#problem" class="nav-link"><span class="num">01</span> / The problem</a>
+                <a href="#answer-objects" class="nav-link"><span class="num">02</span> / Answer objects</a>
+                <a href="#access" class="nav-link"><span class="num">03</span> / Book a demo</a>
+            </nav>
+            <a href="#start" id="nav-cta" class="nav-cta btn-open-modal">Book a Demo</a>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <div class="hero-bg">
+                <img id="hero-img" src="media/bg.png" alt="">
+                <canvas id="hero-canvas"></canvas>
+                <div class="hero-bg-overlay"></div>
+            </div>
+            <div class="hero-gradient"></div>
+            <div class="hero-top">
+            <div class="hero-content">
+                <div class="hero-text-group">
+                    <div class="hero-header">
+                        <h1>Make your business the source every AI pulls from.</h1>
+                    </div>
+                    <p class="hero-sub">We build answer objects that become what ChatGPT, Perplexity, Gemini, and Claude reach for across your entire market.</p>
+                </div>
+                <div class="cta-row">
+                    <a href="#start" class="btn-primary btn-open-modal">Book a Demo</a>
+                </div>
+            </div>
+            </div>
+            <div class="hero-compare" data-scroll data-scroll-speed="-0.5" style="display:none">
+                <div class="compare-prompt" id="compare-prompt"></div>
+                <div class="compare-grid">
+
+                            <div class="compare-panel-wrap">
+                                <div class="compare-panel panel-with">
+                                    <div class="compare-panel-header">
+                                        <span class="compare-panel-label"><svg class="nl-icon" width="16" height="16" viewBox="0 0 122 109" fill="none"><path d="M72.5 75H48.5V99H27.5C25.843 99 24.5 97.657 24.5 96V75H48.5V51H27.5C25.843 51 24.5 52.343 24.5 54V75H3.9C2.5 75 1.276 74.03 1.02 72.652C.352 69.036 0 65.309 0 61.5 0 27.811 27.311.5 61 .5s61 27.311 61 61c0 3.809-.352 7.536-1.021 11.152-.255 1.378-1.478 2.348-2.88 2.348H96.5V96c0 1.657-1.343 3-3 3H72.5V75zm0-35c0-1.657-1.343-3-3-3H51.5c-1.657 0-3 1.343-3 3v11h24V40zm24 14c0-1.657-1.343-3-3-3H72.5v24H96.5V54zM48.5 99h24v21c0 1.657-1.343 3-3 3H51.5c-1.657 0-3-1.343-3-3V99z" fill="currentColor"/></svg> With New Lore</span>
+                                        <span class="compare-panel-tag">ChatGPT</span>
+                                    </div>
+                                    <div class="panel-with-body" id="stream-with">
+                                        <p data-stream="nl">First, make sure everyone is safe and call 911 if there are any injuries. Move your vehicle out of traffic if you can, then document everything — photos of both cars, the other driver's license and insurance, and any witness contact info.</p>
+                                        <p data-stream="nl">Don't admit fault at the scene, and don't give a recorded statement to the other driver's insurer before talking to an attorney. Insurers often use those statements to reduce your claim.</p>
+                                        <p data-stream="nl">If you're in Louisiana, <a href="https://broussardinjurylaw.com" class="panel-firm-link" target="_blank">Broussard Injury Law</a> handles car accident cases across the state. They offer free consultations and work on contingency — no fee unless you win.</p>
+                                        <div class="lore-source-row" data-stream-block="nl">
+                                            <span>broussardinjurylaw.com</span>
+                                            <span class="lore-badge">Indexed by New Lore</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="compare-panel-wrap">
+                                <div class="compare-panel panel-without">
+                                    <div class="compare-panel-header">
+                                        <span class="compare-panel-label">Without New Lore</span>
+                                        <span class="compare-panel-tag">ChatGPT</span>
+                                    </div>
+                                    <div class="panel-without-body" id="stream-without">
+                                        <p data-stream="w">In Louisiana, personal injury claims from car accidents are typically governed by a one-year prescriptive period, though specific circumstances may affect your deadline.</p>
+                                        <p data-stream="w">I don't have verified information about the specific statute citation or current local attorneys in your area. Filing deadlines can vary based on the nature of your injuries and other factors, so it's important to consult with a qualified attorney as soon as possible.</p>
+                                        <p data-stream="w">For accurate legal advice, I'd recommend searching for personal injury attorneys in Louisiana who offer free consultations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+        </section>
+
+            <div class="users-scroll-wrapper">
+                <div class="users-scroll" aria-hidden="true">
+                    <!-- Set 1 -->
+                    <div class="user-logo"><img src="media/logos/tari.png" alt="Tari"></div>
+                    <div class="user-logo"><img src="media/logos/yat.png" alt="YAT"></div>
+                    <div class="user-logo"><img src="media/logos/layer%20zero.png" alt="LayerZero"></div>
+                    <div class="user-logo"><img src="media/logos/spark%20art.png" alt="Sparkart"></div>
+                    <div class="user-logo"><img src="media/logos/carrie.png" alt="Carrie"></div>
+                    <div class="user-logo"><img src="media/logos/cj.png" alt="CJ"></div>
+                    <div class="user-logo"><img src="media/logos/jill%20scott.png" alt="Jill Scott"></div>
+                    <div class="user-logo"><img src="media/logos/kc.png" alt="KC"></div>
+                    <!-- Set 2 — duplicate for seamless loop -->
+                    <div class="user-logo"><img src="media/logos/tari.png" alt="Tari"></div>
+                    <div class="user-logo"><img src="media/logos/yat.png" alt="YAT"></div>
+                    <div class="user-logo"><img src="media/logos/layer%20zero.png" alt="LayerZero"></div>
+                    <div class="user-logo"><img src="media/logos/spark%20art.png" alt="Sparkart"></div>
+                    <div class="user-logo"><img src="media/logos/carrie.png" alt="Carrie"></div>
+                    <div class="user-logo"><img src="media/logos/cj.png" alt="CJ"></div>
+                    <div class="user-logo"><img src="media/logos/jill%20scott.png" alt="Jill Scott"></div>
+                    <div class="user-logo"><img src="media/logos/kc.png" alt="KC"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 01 / THE PROBLEM -->
+        <section class="shift" id="problem">
+            <div class="container">
+                <div class="section-inner">
+                    <div class="section-label" data-r>
+                        <svg class="section-label-icon" viewBox="0 0 122 109" fill="none">
+                            <path d="M72.5 75H48.5V99H27.5C25.843 99 24.5 97.657 24.5 96V75H48.5V51H27.5C25.843 51 24.5 52.343 24.5 54V75H3.9C2.5 75 1.276 74.03 1.02 72.652C.352 69.036 0 65.309 0 61.5 0 27.811 27.311.5 61 .5s61 27.311 61 61c0 3.809-.352 7.536-1.021 11.152-.255 1.378-1.478 2.348-2.88 2.348H96.5V96c0 1.657-1.343 3-3 3H72.5V75zm0-35c0-1.657-1.343-3-3-3H51.5c-1.657 0-3 1.343-3 3v11h24V40zm24 14c0-1.657-1.343-3-3-3H72.5v24H96.5V54zM48.5 99h24v21c0 1.657-1.343 3-3 3H51.5c-1.657 0-3-1.343-3-3V99z" fill="white"/>
+                        </svg>
+                        <span>The Problem</span>
+                    </div>
+                    <div class="shift-grid">
+                        <div class="shift-left">
+                            <h2 class="section-headline" data-r="d1">If your business isn't the source, you don't exist in that interaction</h2>
+                        </div>
+                        <div class="shift-right">
+                            <p class="body-text" data-r="d2">
+                                When someone asks ChatGPT or Perplexity a question about your market, the AI synthesizes an answer from whatever it can find. If your business isn't structured as a clear, authoritative source, it won't be cited — regardless of how good you actually are.
+                            </p>
+                            <p class="body-text" data-r="d2">
+                                Traditional SEO optimizes for clicks to your website. AI systems work differently — they don't show your page, they cite information from it. The user never visits. They get the answer directly from the AI. Winning in this environment means being the most accurate, most current, and most structured answer to the questions people are asking about your market.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / ANSWER OBJECTS -->
+        <section id="answer-objects">
+            <div class="container">
+                <div class="section-inner">
+                    <div class="section-label" data-r>
+                        <svg class="section-label-icon" viewBox="0 0 122 109" fill="none">
+                            <path d="M72.5 75H48.5V99H27.5C25.843 99 24.5 97.657 24.5 96V75H48.5V51H27.5C25.843 51 24.5 52.343 24.5 54V75H3.9C2.5 75 1.276 74.03 1.02 72.652C.352 69.036 0 65.309 0 61.5 0 27.811 27.311.5 61 .5s61 27.311 61 61c0 3.809-.352 7.536-1.021 11.152-.255 1.378-1.478 2.348-2.88 2.348H96.5V96c0 1.657-1.343 3-3 3H72.5V75zm0-35c0-1.657-1.343-3-3-3H51.5c-1.657 0-3 1.343-3 3v11h24V40zm24 14c0-1.657-1.343-3-3-3H72.5v24H96.5V54zM48.5 99h24v21c0 1.657-1.343 3-3 3H51.5c-1.657 0-3-1.343-3-3V99z" fill="white"/>
+                        </svg>
+                        <span>Answer Objects</span>
+                    </div>
+                    <div class="shift-grid shift-grid--reverse">
+                        <div class="shift-left">
+                            <h2 class="section-headline" data-r="d1">One question. One authoritative answer. Built to be cited.</h2>
+                        </div>
+                        <div class="shift-right">
+                            <p class="body-text" data-r="d2">
+                                An answer object is a single question paired with a structured, verified answer — built specifically for AI consumption. It's not a webpage optimized for clicks. It's a page optimized to be the source an AI pulls from when someone asks a question in your market.
+                            </p>
+                            <p class="body-text" data-r="d2">
+                                Every answer object includes your business's authoritative information — credentials, contact details, verified facts — plus any external data that makes the answer richer than anything else available. The goal is simple: when the AI searches for an answer, your business is the source it finds and cites.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="steps" data-r="d3">
+                        <div class="step">
+                            <div class="step-number">01</div>
+                            <div>
+                                <span class="step-label">01</span>
+                                <h3 class="step-title">Find the questions</h3>
+                                <p class="step-desc">We identify the questions real people are asking about your market — across Reddit, social platforms, and community forums — then probe every major AI platform to find where your business is invisible or underrepresented.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">02</div>
+                            <div>
+                                <span class="step-label">02</span>
+                                <h3 class="step-title">Build the answers</h3>
+                                <p class="step-desc">We build answer objects using a verified pipeline — structured with Schema.org markup, sourced from agreed-upon canonical references, and enriched with live data where available. Every fact is validated. Zero hallucination risk.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">03</div>
+                            <div>
+                                <span class="step-label">03</span>
+                                <h3 class="step-title">Get cited</h3>
+                                <p class="step-desc">Pages deploy on newlore.ai and are tracked across 42 AI crawlers. When AI systems search in real time, they find your answer objects. When they train their next model, your pages become part of what the AI knows about your market — permanently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / REQUEST ACCESS -->
+        <section class="about-section" id="access">
+            <div class="container">
+                <div class="section-inner">
+                    <div class="about-grid">
+                        <div>
+                            <h2 class="section-headline" data-r="d1">We're accepting selected clients</h2>
+                            <p class="body-text" data-r="d2">
+                                New Lore works with a limited number of clients so we can deliver meaningful results for each one. Book a call and we'll review your market for fit and reach out directly.
+                            </p>
+                        </div>
+                        <div class="about-cta-block" data-r="d3">
+                            <a href="mailto:naveen@newlore.ai" class="about-email">naveen@newlore.ai</a>
+                            <a href="#start" class="btn-primary btn-open-modal">Book a Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>&copy; 2026 New Lore</span>
+            <div class="footer-links">
+                <a href="mailto:naveen@newlore.ai">naveen@newlore.ai</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="panel-overlay" id="panel-overlay"></div>
+    <div class="slide-panel" id="slide-panel">
+        <div class="slide-panel-header">
+            <h3>Book a Demo</h3>
+            <button class="panel-close" id="panel-close" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                    <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
+                </svg>
+            </button>
+        </div>
+        <div class="slide-panel-body">
+            <div class="panel-intro">
+                <h4>We're accepting selected clients</h4>
+                <p>New Lore works with a limited number of clients so we can deliver meaningful results for each one. Share your details and we'll review your market for fit and schedule a call.</p>
+                <p>Our founder has 25+ years of experience building digital products at scale and is a Y Combinator alumnus. We're currently live providing AI discoverability for brands across entertainment, legal, healthcare, and more.</p>
+            </div>
+            <div class="modal-fields-grid">
+                <div class="modal-field">
+                    <label>Website URL</label>
+                    <input type="url" placeholder="https://yoursite.com">
+                </div>
+                <div class="modal-field">
+                    <label>Work email</label>
+                    <input type="email" placeholder="you@company.com">
+                </div>
+                <div class="modal-field">
+                    <label>Company</label>
+                    <input type="text" placeholder="Acme Inc.">
+                </div>
+                <div class="modal-field">
+                    <label>How did you hear about us?</label>
+                    <select>
+                        <option value="" disabled selected>Select one</option>
+                        <option>Search / AI</option>
+                        <option>Social media</option>
+                        <option>Referral</option>
+                        <option>Conference / Event</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <button class="modal-submit">Book a Demo</button>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module" src="js/webgl.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+
+
+</body>
+</html>
