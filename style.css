@@ -1243,77 +1243,217 @@ footer .container {
     margin-bottom: 0;
 }
 
-.modal-fields-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 20px;
+/* ── Underline form fields ── */
+
+.fields-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 36px;
 }
 
-.modal-field.full-width {
-    grid-column: 1 / -1;
+.field {
+    position: relative;
 }
 
-.modal-field {
-    margin-bottom: 14px;
+.field-wrap {
+    position: relative;
+    padding-top: 20px;
 }
-.modal-field label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.45);
-    margin-bottom: 7px;
-    font-family: var(--font-sans);
-}
-.modal-field input,
-.modal-field select {
+
+/* Base underline */
+.field-wrap input,
+.field-wrap select {
     width: 100%;
-    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 0;
+    padding: 6px 0 10px;
     font-family: var(--font-serif);
     font-size: 15px;
     color: #0a0a0a;
-    background: rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 10px;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: border-color 0.25s ease;
     appearance: none;
     -webkit-appearance: none;
 }
-.modal-field input:focus,
-.modal-field select:focus {
-    border-color: rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.06);
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
-}
-.modal-field input::placeholder {
-    color: rgba(0, 0, 0, 0.28);
+
+.field-wrap select {
+    padding-right: 22px;
+    cursor: pointer;
 }
 
+/* Animated focus bar */
+.field-bar {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #0a0a0a;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.field-wrap input:focus ~ .field-bar,
+.field-wrap select:focus ~ .field-bar {
+    transform: scaleX(1);
+}
+
+/* Floating label */
+.field-wrap label {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.38);
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.22s ease;
+}
+
+/* Float up: input has content (not just placeholder) or is focused */
+.field-wrap input:not(:placeholder-shown) + label,
+.field-wrap input:focus + label,
+.field-wrap.has-value label {
+    transform: translateY(-22px) scale(0.76);
+    color: rgba(0, 0, 0, 0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.field-wrap input:focus + label,
+.field-wrap select:focus + label {
+    color: #0a0a0a;
+}
+
+/* Select arrow */
+.select-arrow {
+    position: absolute;
+    right: 2px;
+    bottom: 14px;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.35);
+    transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.field-wrap select:focus ~ .select-arrow {
+    transform: rotate(180deg);
+    color: #0a0a0a;
+}
+
+/* Inline error messages */
+.field-error {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: #c0392b;
+    margin-top: 5px;
+    min-height: 15px;
+    opacity: 0;
+    transform: translateY(-3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.field.has-error .field-error {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.field.has-error .field-wrap input,
+.field.has-error .field-wrap select {
+    border-bottom-color: #c0392b;
+}
+
+.field.has-error .field-bar {
+    background: #c0392b;
+    transform: scaleX(1);
+}
+
+.field.has-error .field-wrap input:focus + label,
+.field.has-error .field-wrap select:focus + label {
+    color: #c0392b;
+}
+
+/* Submit button */
 .modal-submit {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     font-family: var(--font-serif);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.01em;
-    text-transform: uppercase;
     color: #ffffff;
     background: #0a0a0a;
     padding: 17px 24px;
     border-radius: 60px;
     border: none;
     cursor: pointer;
-    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease, opacity 0.2s ease;
 }
+
 .modal-submit:hover {
     background: #222222;
     transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-submit:active {
+    transform: translateY(0);
+}
+
+.submit-spinner {
+    display: none;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+.modal-submit.loading .submit-label { opacity: 0.5; }
+.modal-submit.loading .submit-spinner { display: block; }
+.modal-submit.loading { pointer-events: none; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success state */
+.form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    animation: fadeUp 0.4s ease both;
+}
+
+.form-success-check {
+    margin-bottom: 4px;
+}
+
+.form-success h4 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: #0a0a0a;
+    letter-spacing: -0.01em;
+}
+
+.form-success p {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.65;
 }
 
 /* ═══════════════════════════════════
@@ -1682,9 +1822,6 @@ footer .container {
         gap: 20px;
     }
 
-    .modal-fields-grid {
-        grid-template-columns: 1fr;
-    }
 
     .slide-panel {
         top: 8px;

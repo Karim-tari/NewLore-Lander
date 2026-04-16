@@ -143,6 +143,80 @@ document.addEventListener('DOMContentLoaded', () => {
     panelOverlay.addEventListener('click', closePanel);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
 
+    // ── Demo form — validation + submission ──────────────────────────────────
+    const demoForm    = document.getElementById('demo-form');
+    const formSuccess = document.getElementById('form-success');
+
+    if (demoForm) {
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const urlRe   = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/\S*)?$/i;
+
+        function setError(field, msg) {
+            field.classList.add('has-error');
+            field.classList.remove('is-valid');
+            field.querySelector('.field-error').textContent = msg;
+        }
+
+        function clearError(field) {
+            field.classList.remove('has-error');
+        }
+
+        function validateField(field) {
+            const input = field.querySelector('input, select');
+            const val   = input.value.trim();
+
+            if (input.required && !val) {
+                setError(field, 'This field is required.');
+                return false;
+            }
+            if (input.type === 'email' && val && !emailRe.test(val)) {
+                setError(field, 'Please enter a valid email address.');
+                return false;
+            }
+            if (input.type === 'url' && val && !urlRe.test(val)) {
+                setError(field, 'Please enter a valid URL.');
+                return false;
+            }
+            clearError(field);
+            return true;
+        }
+
+        // Clear error on input
+        demoForm.querySelectorAll('.field').forEach(field => {
+            const input = field.querySelector('input, select');
+            input.addEventListener('input', () => validateField(field));
+            input.addEventListener('blur',  () => { if (input.value.trim()) validateField(field); });
+        });
+
+        // Float select label when a value is chosen
+        const sourceSelect = document.getElementById('f-source');
+        if (sourceSelect) {
+            sourceSelect.addEventListener('change', () => {
+                sourceSelect.closest('.field-wrap').classList.toggle('has-value', !!sourceSelect.value);
+            });
+        }
+
+        demoForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            const fields  = [...demoForm.querySelectorAll('.field')];
+            const allValid = fields.map(f => validateField(f)).every(Boolean);
+            if (!allValid) {
+                demoForm.querySelector('.field.has-error input, .field.has-error select')?.focus();
+                return;
+            }
+
+            const btn = demoForm.querySelector('.modal-submit');
+            btn.classList.add('loading');
+
+            // Simulate async submit (swap in real fetch() when backend is ready)
+            await new Promise(r => setTimeout(r, 1200));
+
+            btn.classList.remove('loading');
+            demoForm.hidden = true;
+            formSuccess.hidden = false;
+        });
+    }
+
     // ── Compare panel animation end cleanup ───────────────────────────────────
     document.querySelectorAll('.compare-panel').forEach(panel => {
         panel.addEventListener('animationend', () => {
