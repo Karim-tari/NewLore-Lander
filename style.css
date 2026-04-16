@@ -1067,17 +1067,14 @@ section {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--page-pad);
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
 }
 
 .users-scroll {
     display: flex;
     align-items: center;
-    gap: 96px;
-    animation: scrollLogos 28s linear infinite;
-    width: max-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px 96px;
 }
 
 
@@ -1106,11 +1103,6 @@ section {
     opacity: 1;
 }
 
-/* Seamless loop: translate exactly one set (50% of the duplicated track) */
-@keyframes scrollLogos {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
 
 /* ═══════════════════════════════════
    FOOTER
