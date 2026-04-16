@@ -962,22 +962,25 @@ section {
 .step {
     position: relative;
     padding: 44px 36px 48px;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.11);
     border-radius: 16px;
     overflow: hidden;
     cursor: default;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     transition: transform 0.32s cubic-bezier(0.22, 0.68, 0, 1.2),
                 box-shadow 0.32s cubic-bezier(0.22, 0.68, 0, 1.2),
-                border-color 0.2s ease;
+                border-color 0.2s ease,
+                background 0.2s ease;
     will-change: transform;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .step:hover {
     transform: translateY(-8px) scale(1.015);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
-    border-color: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
 }
 
 .step-number {
@@ -986,7 +989,7 @@ section {
     right: -10px;
     font-size: 130px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.04);
+    color: rgba(255, 255, 255, 0.06);
     line-height: 1;
     letter-spacing: -0.06em;
     pointer-events: none;
@@ -1007,7 +1010,7 @@ section {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.38);
     margin-bottom: 20px;
     font-family: var(--font-sans);
 }
@@ -1015,7 +1018,7 @@ section {
 .step-title {
     font-size: 20px;
     font-weight: 500;
-    color: #0a0a0a;
+    color: rgba(255, 255, 255, 0.92);
     margin-bottom: 12px;
     font-family: var(--font-serif);
 }
@@ -1023,7 +1026,7 @@ section {
 .step-desc {
     font-size: 16px;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.55);
+    color: rgba(255, 255, 255, 0.52);
     font-family: var(--font-serif);
 }
 
